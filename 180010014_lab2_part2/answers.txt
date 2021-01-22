@@ -1,0 +1,10 @@
+Comment on the order in which processes are created and processes exit and justify it is as
+expected:
+
+Processes occur according to their dependencies. They can be any of these following states at a time:
+
+NEW- The process is being created.
+READY- The process is waiting to be assigned to a processor.
+RUNNING- Instructions are being executed.
+WAITING- The process is waiting for some event to occur(such as an I/O completion or reception of a signal).
+TERMINATED- The process has finished execution.
