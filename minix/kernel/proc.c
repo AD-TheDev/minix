@@ -1542,7 +1542,7 @@ void enqueue(
 
   assert(q >= 0);
 
-  if(q>=7) printf("Minix: PID %d is swapped in\n",rp->p_endpoint);
+  //if(q>=7) printf("Minix: PID %d is swapped in\n",rp->p_endpoint);
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
@@ -1738,6 +1738,7 @@ static struct proc * pick_proc(void)
 	assert(proc_is_runnable(rp));
 	if (priv(rp)->s_flags & BILLABLE)	 	
 		get_cpulocal_var(bill_ptr) = rp; /* bill for system time */
+	if(rp->p_priority>=7) printf("Minix: PID %d is swapped in\n",rp->p_endpoint);
 	return rp;
   }
   return NULL;
