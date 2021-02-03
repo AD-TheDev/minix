@@ -1542,8 +1542,6 @@ void enqueue(
 
   assert(q >= 0);
 
-  if(q>=7) printf("Minix: PID %d is swapped in\n",rp->p_endpoint);
-
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
 
